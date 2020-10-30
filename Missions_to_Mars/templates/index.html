@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container ">
+
+    <div class="jumbotron text-center col-md-12">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+  <div class="container ">
+    <div class="row" >
+        <div class="col-md-12">
+            <h2>Latest Mars News</h2>
+            <h3 class="lead">{{ mars.n_title }}</h3>
+            <p>{{ mars.n_paragraph }}</p>
+        </div>
+    </div>
+</div>
+  
+<div class="container ">
+    <div class="row" >
+        <div class="col-md-8">
+        <h2>Featured Mars Image</h2>
+        <img src = "{{ mars.full_image }}" class = 'img-fluid'>
+        </div>
+        <div class="col-md-4">
+            <h4>Mars Facts</h4>
+            <div class="table-responsive">
+             <table class="table">
+            {{ mars.html_table|safe }}
+            </table></div>
+        </div>
+    </div>
+</div>
+<br>
+<hr class="my-3">
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="text-center">Mars Hemispheres</h2>
+        <hr>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="{{mars.img_urls.0.img_url}}" class="img-fluid img-thumbnail" alt="Responsive image">
+              <p class="lead">{{mars.img_urls.0.title}}</p>
+            </div>
+            <div class="col-md-6">
+              <img src="{{mars.img_urls.1.img_url}}" class="img-fluid img-thumbnail" alt="Responsive image">
+              <p class="lead">{{mars.img_urls.1.title}}</p>
+            </div>
+          </div>  
+          <div class="row">
+            <div class="col-md-6">
+                <img src="{{mars.img_urls.2.img_url}}" class="img-fluid img-thumbnail" alt="Responsive image">
+                <p class="lead">{{mars.img_urls.2.title}}</p>
+            </div>
+            <div class="col-md-6">
+                <img src="{{mars.img_urls.3.img_url}}" class="img-fluid img-thumbnail" alt="Responsive image">
+                <p class="lead">{{mars.img_urls.3.title}}</p>
+            </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+</body>
+      
